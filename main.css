@@ -1,0 +1,110 @@
+@font-face {
+    src: url("/fonts/WarblerVariable[opsz\,wght]-Edu.woff2") format("woff2"),
+         url('/fonts/WarblerVariable-Italic[opsz\,wght]-Edu.woff') format("woff");
+
+
+    font-family: 'Warbler Variable';
+    font-style: normal;
+    font-weight: normal;
+    }
+
+ @font-face {
+    src: url("/fonts/WarblerVariable-Italic[opsz\,wght]-Edu.woff2") format("woff2"),
+         url('/fonts/WarblerVariable-Italic[opsz\,wght]-Edu.woff') format("woff");
+        font-family: 'Warbler Variable Italic';
+        font-style: italic;
+        font-weight: normal;
+    }
+    
+    body{
+    background-color: lightsteelblue;
+    /* font-family: 'Warbler Variable Italic'; */
+}
+/* how the page wrapper will appear on mobile */
+.page-wrapper{
+    width: min(100% - 3rem, 80ch);
+    margin-inline: auto;
+}
+/* how the page wrapper appears on desktop */
+
+@media only screen and (min-width:800px){
+.page-wrapper{
+display: grid;
+grid-gap: 25px;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+grid-template-areas: 
+    "h v"
+    "a a";
+}
+
+.history {
+grid-area: h;
+}
+
+.variations{
+grid-area: v;
+}
+
+.alphabet {
+grid-area: a;
+}
+}
+/* CSS for the footer */
+footer{
+    background-color: gray;
+}
+
+/* variable font animation */
+h3{
+    font-weight:20; 
+    text-align: center;
+    font-size: 5em;
+    animation: weightChange 7s infinite;
+    font-family: 'Warbler Variable';
+    line-height: 10px;
+}
+
+h4{
+    font-weight:20; 
+    text-align: center;
+    font-size: 5em;
+    /* animation: weightChange 7s infinite; */
+    font-family: "Warbler Variable Italic";
+    line-height: 10px;
+}
+
+@keyframes weightChange {
+    0%, 100%{
+        font-variation-settings: "opsz" 15, "wght" 400;
+    }
+    50%{font-variation-settings: "opsz" 96, "wght" 700;
+    }
+    
+}
+/* variable font that changes on hover */
+.variable-font{
+    font-weight:1 ;
+    height:100vh;
+    font-size: 10em;
+    display:grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+    font-variation-settings: "wght" 40, "wdth" 0, "XXXX" 1;
+    transition: 
+        font-weight 500ms,
+        font-variation-settings 3s;
+}
+
+.variable-font:hover{
+    font-weight:500 ;
+    height:100vh;
+    font-size: 7em;
+    display:grid;
+    place-content: center;
+    margin: 0;
+    text-align: center;
+    font-variation-settings: "wght" 120, "wdth" 0, "XXXX" 100;
+}
+
